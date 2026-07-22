@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Self Gradient Forcing
+# 🌀 Self Gradient Forcing
 
 ### Native Long-Video Extrapolation with Gradient-Recovered Autoregressive Training
 
