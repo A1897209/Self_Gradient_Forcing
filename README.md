@@ -19,14 +19,6 @@
   Joy Future Academy, JD
 </p>
 
-<h4>
-  <a href="https://huggingface.co/JunhaoZhuang/Self_Gradient_Forcing">🤗 Model Weights</a>
-  ·
-  <a href="mailto:zhuangjh23@mails.tsinghua.edu.cn">📮 Contact</a>
-  ·
-  <a href="LICENSE">📜 License</a>
-</h4>
-
 ⭐ If Self Gradient Forcing is useful for your research, please consider starring this repository.
 
 </div>
