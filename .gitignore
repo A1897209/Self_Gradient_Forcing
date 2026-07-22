@@ -13,6 +13,8 @@ checkpoints/
 wan_models/
 dataset/
 prompts/vidprom_filtered_extended.txt
+/config.json
+/model_index.json
 logs/
 outputs/
 output/

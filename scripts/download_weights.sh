@@ -27,11 +27,10 @@ mkdir -p checkpoints/init/framewise checkpoints/init/chunkwise checkpoints/frame
 "$HF_CLI" download "$HF_REPO" framewise/ar/model.pt --local-dir checkpoints
 "$HF_CLI" download "$HF_REPO" chunkwise/ar/model.pt --local-dir checkpoints
 
-if "$HF_CLI" download "$HF_REPO" prompts/vidprom_filtered_extended.txt --local-dir .; then
-    echo "Downloaded training prompt list to prompts/vidprom_filtered_extended.txt"
-else
-    echo "Optional training prompt list was not found in $HF_REPO; provide your own file at prompts/vidprom_filtered_extended.txt before training."
-fi
+# Training prompt list and release metadata.
+"$HF_CLI" download "$HF_REPO" vidprom_filtered_extended.txt --local-dir prompts
+"$HF_CLI" download "$HF_REPO" config.json --local-dir .
+"$HF_CLI" download "$HF_REPO" model_index.json --local-dir .
 
 cat <<INFO
 
@@ -46,4 +45,5 @@ Chunkwise training initializations:
   checkpoints/init/chunkwise/causal_ode.pt
 Framewise inference checkpoint: checkpoints/framewise/ar/model.pt
 Chunkwise inference checkpoint: checkpoints/chunkwise/ar/model.pt
+Training prompt list: prompts/vidprom_filtered_extended.txt
 INFO

@@ -73,6 +73,7 @@ It downloads:
 - Wan base models to `wan_models/Wan2.1-T2V-1.3B` and `wan_models/Wan2.1-T2V-14B`.
 - All [Causal-Forcing](https://github.com/thu-ml/Causal-Forcing) initialization checkpoints under `checkpoints/init/framewise/` and `checkpoints/init/chunkwise/`: `ar_diffusion.pt`, `causal_cd.pt`, and `causal_ode.pt`.
 - Released SGF inference checkpoints to `checkpoints/framewise/ar/model.pt` and `checkpoints/chunkwise/ar/model.pt`.
+- The training prompt list to `prompts/vidprom_filtered_extended.txt`.
 
 ## 🚀 Inference
 
