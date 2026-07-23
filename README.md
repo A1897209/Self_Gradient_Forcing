@@ -2,7 +2,7 @@
 
 # 🌀 Self Gradient Forcing
 
-### Native Long-Video Extrapolation with Gradient-Recovered Autoregressive Training
+### Native Long-Video Extrapolation
 
 <p>
   <a href='http://zhuang2002.github.io/SelfGradientForcing'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
