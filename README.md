@@ -6,7 +6,7 @@
 
 <p>
   <a href='http://zhuang2002.github.io/SelfGradientForcing'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
-  <a href="https://arxiv.org/abs/2510.12747"><img src="https://img.shields.io/badge/arXiv-2510.12747-b31b1b.svg"></a> &nbsp;
+  <a href="https://arxiv.org/abs/2607.20368"><img src="https://img.shields.io/badge/arXiv-2607.20368-b31b1b.svg"></a> &nbsp;
   <a href="https://huggingface.co/JunhaoZhuang/Self_Gradient_Forcing"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Models-yellow" alt="Hugging Face"></a> &nbsp;
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue" alt="License"></a>
 </p>
@@ -178,13 +178,13 @@ This project is released under the Apache-2.0 license.
 ### 📜 Citation
 
 ```bibtex
-@article{zhuang2026sgf,
-  title  = {Self Gradient Forcing: Native Long Video Extrapolation},
-  author = {Zhuang, Junhao and Zhang, Shiyi and Bian, Yuxuan and Li, Yaowei
-            and Luo, Yawen and Jin, Weiyang and Zhang, Songchun and He, Xianglong
-            and Zhang, Xuying and Li, Haoran and Huang, Haoyang and Xue, Zeyue
-            and Duan, Nan},
-  journal = {arXiv preprint},
-  year    = {2026}
+@misc{zhuang2026selfgradientforcingnative,
+      title={Self Gradient Forcing: Native Long Video Extrapolation}, 
+      author={Junhao Zhuang and Shiyi Zhang and Yuxuan Bian and Yaowei Li and Yawen Luo and Yijun Liu and Weiyang Jin and Songchun Zhang and Xianglong He and Xuying Zhang and Haoran Li and Haoyang Huang and Zeyue Xue and Nan Duan},
+      year={2026},
+      eprint={2607.20368},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2607.20368}, 
 }
 ```
